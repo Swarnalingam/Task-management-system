@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-8">
+            <div class="d-flex justify-content-center h-100">
+                <div class="w-50 align-content-center m-5">
+                    <div class="h3 fw-bold text-center">
+                        Log in
+                    </div>
+                    <div class="fw-medium text-body-tertiary text-center">
+                        Continue Enter your email
+                    </div>
+                    <div class="my-3">
+                        <div class="fw-medium mb-2">
+                            Email
+                        </div>
+                        <div class="input-group mb-2 input-group-lg">
+                           <input type="text" class="form-control" placeholder="example@gmail.com" [(ngModel)]="userDetail.userId"/>
+                        </div>
+                        <div class="fw-medium mb-2">
+                            Password
+                        </div>
+                        <div class="input-group mb-2 input-group-lg">
+                             <input type="text" class="form-control" placeholder="Password" [(ngModel)]="userDetail.password"/>
+                        </div>
+                        <button class="btn w-100 rounded-1 btn-danger fw-medium border-0 btn-lg py-3" (click)="onGoHome()" type="button">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-4 grad-bg-pink text-white">
+            <div class="d-flex justify-content-center h-100">
+                <div class="w-75 align-content-center">
+                    <div class="fs-5">
+                        "Organize your work and find the way, Turn your ideas into action today.<br> With every plan,
+                        you're bound to rise Watch your success reach new skies"
+                    </div>
+                    <hr class="border rounded-2 border-2 opacity-100 w-75">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
