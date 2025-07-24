@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -23,10 +24,13 @@ export class SessionService {
   }
 ]
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   getUser(){
-    let user = sessionStorage.getItem('user');
+    let user = null;
+    if(isPlatformBrowser(this.platformId)){
+    user = sessionStorage.getItem('user');
+    } 
     return !!user ? JSON.parse(user) :null;
   }
 
@@ -43,7 +47,10 @@ export class SessionService {
   }
 
   getTask(){
-    let tasks = sessionStorage.getItem('task');
+    let tasks:any = [];
+     if(isPlatformBrowser(this.platformId)){
+      tasks = sessionStorage.getItem('task');
+     }
     return !!tasks && tasks.length ? JSON.parse(tasks) :[];
   }
 
